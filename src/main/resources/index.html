@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Kotlin API</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&display=swap');
+    body {
+        background-color: #1d3557;
+    }
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        background-color: #a8dadc;
+        width: 20vw;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.7);
+        text-align: center;
+    }
+    * {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+    }
+    h1 {
+        font-family: "Rubik", monospace;
+    }
+    button {
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        background-color: #e63946;
+        box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.7);
+        margin: 10px;
+    }
+    .button-area {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Hello Developer!</h1>
+            <br>
+            <p>Welcome to my simple Kotlin Api Example build with Ktor. <a href="https://github.com/jakkoble/KotlinApiExample/">Link</a></p>
+            <br>
+            <div class="button-area">
+                <button id="put" onclick="sendRequest('POST')">Add a Cherry</button>
+                <button id="delete" onclick="sendRequest('DELETE')">Remove a Cherry</button>
+            </div>
+            <br>
+            <a href="localhost:8080/fruits" target="_blank">Link to the Fruit List</a>
+            <br><br>
+            <a style="text-decoration: none;" href="https://jakkoble.de">by Jakkoble</a>
+        </div>
+    </div>
+<script>
+    function sendRequest(type) {
+        let request = new XMLHttpRequest()
+        request.open(type, "http://localhost:8080/fruits")
+        request.setRequestHeader("Content-Type", "application/json")
+        let data = `{
+            "name": "Cherry",
+            "favorite": false
+        }`
+        request.send(data)
+        alert("Successfully send your Request, go to 'localhost:8080/fruits' to view result.")
+    }
+</script>
+</body>
+</html>
