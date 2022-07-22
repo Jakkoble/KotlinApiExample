@@ -14,7 +14,7 @@ fun Application.configureHTTP() {
 
         // Get-Request without parameter
         get {
-            call.respondText("Hello Developer! Welcome to my simple Kotlin Api Example build with Ktor. For tutorial how to use this Example API visit: https://github.com/jakkoble")
+            call.respondText(this::class.java.classLoader.getResource("index.html")!!.readText(), ContentType.Text.Html)
         }
 
         // Get-Request with the companion object parameter of Fruit Class
