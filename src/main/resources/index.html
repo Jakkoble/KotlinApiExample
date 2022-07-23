@@ -10,7 +10,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&display=swap');
     body {
-        background-color: #1d3557;
+        background-color: #3d5a80;
     }
     .main {
         width: 100vw;
@@ -20,14 +20,15 @@
         align-items: center;
     }
     .container {
-        background-color: #a8dadc;
+        background-color: #293241;
         width: 20vw;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.7);
+        box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.5);
         text-align: center;
     }
     * {
+        color: white;
         margin: 0;
         font-family: "Roboto", sans-serif;
     }
@@ -41,8 +42,7 @@
         border-radius: 5px;
         color: white;
         font-weight: bold;
-        background-color: #e63946;
-        box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.7);
+        background-color: #ee6c4d;
         margin: 10px;
     }
     .button-area {
@@ -51,8 +51,8 @@
         justify-content: space-between;
     }
     a {
-        color: black;
-        text-decoration: underline;
+        color: #98c1d9;
+        text-decoration: none;
     }
 </style>
 <body>
@@ -60,16 +60,16 @@
         <div class="container">
             <h1>Hello Developer!</h1>
             <br>
-            <p>Welcome to my simple Kotlin Api Example build with Ktor. <a href="https://github.com/jakkoble/KotlinApiExample/">Link</a></p>
+            <p>Welcome to my simple Kotlin Api Example build with Ktor. For tutorial have a look at my <a href="https://github.com/jakkoble/KotlinApiExample/">comment Source Code</a>.</p>
             <br>
             <div class="button-area">
                 <button id="put" onclick="sendRequest('POST')">Add a Cherry</button>
                 <button id="delete" onclick="sendRequest('DELETE')">Remove a Cherry</button>
             </div>
             <br>
-            <a href="localhost:8080/fruits" target="_blank">Link to the Fruit List</a>
+            <a href="http://localhost:8080/fruits" target="_blank">Link to the Fruit List</a>
             <br><br>
-            <a style="text-decoration: none;" href="https://jakkoble.de">by Jakkoble</a>
+            <a style="color: white; text-decoration: underline" href="https://jakkoble.de" target="_blank">by Jakkoble</a>
         </div>
     </div>
 <script>
@@ -82,7 +82,7 @@
             "favorite": false
         }`
         request.send(data)
-        alert("Successfully send your Request, go to 'localhost:8080/fruits' to view result.")
+        alert("Sucessfully send!")
     }
 </script>
 </body>
