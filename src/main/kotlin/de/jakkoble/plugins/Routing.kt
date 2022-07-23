@@ -8,18 +8,18 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-// This extension Funciton to the Main File is used to confige the routing (API Endpoints)
+// This extension Funciton is used to confige the routing (API Endpoints)
 fun Application.configureHTTP() {
     routing {
 
-        // Get-Request without parameter
+        // Get-Request without parameter => Main Page
         get {
             call.respondText(this::class.java.classLoader.getResource("index.html")!!.readText(), ContentType.Text.Html)
         }
 
         // Get-Request with the companion object parameter of Fruit Class
         get(Fruit.path) {
-            call.respond(Fruits.list) // Respond with the Fruit List (because of ContentNegotiation Plugin in JSON)
+            call.respond(Fruits.list) // Respond with the Fruit List (because of installed ContentNegotiation Plugin in JSON)
         }
 
         // Post-Request with the companion object parameter of Fruit Class
@@ -34,7 +34,7 @@ fun Application.configureHTTP() {
         delete(Fruit.path) {
             val name = call.receive<Fruit>().name // Receive Content of Request as Fruit
             Fruits.list.removeIf { it.name == name } // Removes the Element with the name of the Request item
-            call.respond(HttpStatusCode.OK) // Respond Status Code for clean communication
+            call.respond(HttpStatusCode.OK) // Respond Status Code for clean Communication
         }
     }
 }
