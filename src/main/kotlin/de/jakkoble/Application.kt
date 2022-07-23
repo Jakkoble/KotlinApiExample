@@ -14,6 +14,6 @@ fun main() {
 
 /*
 Simple Kotlin/Ktor API Example by Jakkoble
-To test the API Post and Delete Request you can use the AddFruit.http and RemoveFruit.http Files
+To test the API go to http://localhost:8080
 The List is just saved in Runtime => if you stop the Server, the List is gone
 */
