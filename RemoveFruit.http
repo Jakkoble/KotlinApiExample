@@ -1,7 +1,0 @@
-DELETE http://localhost:8080/fruits
-Content-Type: application/json
-
-{
-  "name": "Cherry",
-  "favorite": false
-}
