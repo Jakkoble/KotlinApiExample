@@ -8,7 +8,7 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-// This extension Funciton is used to confige the routing (API Endpoints)
+// This extension Function is used to confige the routing (API Endpoints)
 fun Application.configureHTTP() {
     routing {
 
