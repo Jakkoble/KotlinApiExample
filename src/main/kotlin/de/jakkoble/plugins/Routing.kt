@@ -27,9 +27,13 @@ fun Application.configureHTTP() {
         post(Fruit.path) {
             if (isInvalidKey(call.parameters["key"].toString())) return@post // Check if the Key is WRONG => Stop Here
             val fruit = call.receive<Fruit>() // Receive Content of Request as Fruit
-            if (!Fruits.list.none { it.name == fruit.name }) error("Name already in use") // If name is already in the List throw IllegalStateException
+            if (!Fruits.list.none { it.name == fruit.name }) { // Check if incomming Fruit is already in List
+                println("[Failed] Adding Fruit '${fruit.name}' - Fruit already exists.")
+                return@post
+            }
             Fruits.list.add(fruit) // Add Fruit to Fruit List
             call.respond(HttpStatusCode.OK) // Respond Status Code for clean Communication
+            println("[Success] Added Fruit '${fruit.name}' to Fruit List.")
         }
 
         // Delete-Request with the companion object parameter of Fruit Class
@@ -38,6 +42,7 @@ fun Application.configureHTTP() {
             val name = call.receive<Fruit>().name // Receive Content of Request as Fruit
             Fruits.list.removeIf { it.name == name } // Removes the Element with the name of the Request item
             call.respond(HttpStatusCode.OK) // Respond Status Code for clean Communication
+            println("[Success] Deleted Fruit '$name' from Fruit List.")
         }
     }
 }
