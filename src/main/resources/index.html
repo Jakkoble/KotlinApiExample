@@ -67,7 +67,7 @@
                 <button id="delete" onclick="sendRequest('DELETE')">Remove a Cherry</button>
             </div>
             <br>
-            <a href="http://localhost:8080/fruits" target="_blank">Link to the Fruit List</a>
+            <a href="http://localhost:8080/fruits?key=Usw98ayVeR" target="_blank">Link to the Fruit List</a>
             <br><br>
             <a style="color: white; text-decoration: underline" href="https://jakkoble.de" target="_blank">by Jakkoble</a>
         </div>
@@ -75,7 +75,7 @@
 <script>
     function sendRequest(type) {
         let request = new XMLHttpRequest()
-        request.open(type, "http://localhost:8080/fruits")
+        request.open(type, "http://localhost:8080/fruits?key=Usw98ayVeR")
         request.setRequestHeader("Content-Type", "application/json")
         let data = `{
             "name": "Cherry",

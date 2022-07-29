@@ -19,11 +19,13 @@ fun Application.configureHTTP() {
 
         // Get-Request with the companion object parameter of Fruit Class
         get(Fruit.path) {
+            if (isInvalidKey(call.parameters["key"].toString())) return@get
             call.respond(Fruits.list) // Respond with the Fruit List (because of installed ContentNegotiation Plugin in JSON)
         }
 
         // Post-Request with the companion object parameter of Fruit Class
         post(Fruit.path) {
+            if (isInvalidKey(call.parameters["key"].toString())) return@post
             val fruit = call.receive<Fruit>() // Receive Content of Request as Fruit
             if (!Fruits.list.none { it.name == fruit.name }) error("Name already in use") // If name is already in the List throw IllegalStateException
             Fruits.list.add(fruit) // Add Fruit to Fruit List
@@ -32,9 +34,12 @@ fun Application.configureHTTP() {
 
         // Delete-Request with the companion object parameter of Fruit Class
         delete(Fruit.path) {
+            if (isInvalidKey(call.parameters["key"].toString())) return@delete
             val name = call.receive<Fruit>().name // Receive Content of Request as Fruit
             Fruits.list.removeIf { it.name == name } // Removes the Element with the name of the Request item
             call.respond(HttpStatusCode.OK) // Respond Status Code for clean Communication
         }
     }
 }
+// Methode to check if Key is valid
+fun isInvalidKey(key: String) = key != "Usw98ayVeR"
