@@ -13,4 +13,4 @@ java -jar KotlinApiExample.jar
 If you need further help, feel free to **[open a new Issue](https://github.com/Jakkoble/KotlinApiExample/issues)**. In case you like my project, please give this Repository a ⭐.
 </br>
 </br>
-<img src="https://i.imgur.com/yYGAMdZ.png" heigh=50% width=50%>
+<img src="https://i.imgur.com/ZfugF2L.png" heigh=50% width=50%>
