@@ -6,7 +6,7 @@ import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
 
-// This Extension Funciton is used to install need Plugins
+// This Extension Function is used to install need Plugins
 // What is an Extension Function? Visit: https://kotlinlang.org/docs/extensions.html
 fun Application.configureRouting() {
 
