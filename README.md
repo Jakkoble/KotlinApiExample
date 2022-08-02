@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/jakkoble/kotlinapiexample/badge)](https://www.codefactor.io/repository/github/jakkoble/kotlinapiexample)
 # KotlinApiExample
 This is a simple Kotlin API Example with **Tutorial Code Comments** build with Ktor **for Beginners**.
 </br>
