@@ -11,7 +11,7 @@ Navigate to the Source Folder and execute it with following code line.
 ```
 java -jar KotlinApiExample.jar
 ```
-If you need further help, feel free to **[open a new Issue](https://github.com/Jakkoble/KotlinApiExample/issues)**. In case you like my project, please give this Repository a ⭐.
+If you need further help, feel free to **[open a new Issue](https://github.com/Jakkoble/KotlinApiExample/issues/new)**. In case you like my project, please give this Repository a ⭐.
 </br>
 </br>
 <img src="https://i.imgur.com/ZfugF2L.png" heigh=50% width=50%>
