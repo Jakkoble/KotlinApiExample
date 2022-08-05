@@ -10,16 +10,16 @@ import io.ktor.server.plugins.cors.routing.*
 // What is an Extension Function? Visit: https://kotlinlang.org/docs/extensions.html
 fun Application.configureRouting() {
 
-    // Adds Functionality for Get-, Put-, and Delete-HTTP Request
-    install(CORS) {
-        allowMethod(HttpMethod.Get)
-        allowMethod(HttpMethod.Put)
-        allowMethod(HttpMethod.Delete)
-        anyHost()
-    }
+   // Adds Functionality for Get-, Put-, and Delete-HTTP Request
+   install(CORS) {
+      allowMethod(HttpMethod.Get)
+      allowMethod(HttpMethod.Put)
+      allowMethod(HttpMethod.Delete)
+      anyHost()
+   }
 
-    // Adds Functionality to Display the Fruits in JSON Format
-    install(ContentNegotiation) {
-        jackson()
-    }
+   // Adds Functionality to Display the Fruits in JSON Format
+   install(ContentNegotiation) {
+      jackson()
+   }
 }
